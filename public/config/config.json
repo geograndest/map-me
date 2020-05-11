@@ -1,0 +1,459 @@
+{
+    "app": {
+        "title": "Map Me",
+        "version": "0.0.1",
+        "status": "developpement",
+        "lang": "fr"
+    },
+    "langs": [{
+            "code": "fr",
+            "name": "Français"
+        },
+        {
+            "code": "en",
+            "name": "Anglais"
+        }
+    ],
+    "locales": {
+        "fr": {
+            "locale": "config/app/locales/fr/locales.json",
+            "pages": "config/app/locales/fr/pages.json"
+        },
+        "en": {
+            "locale": "config/app/locales/en/locales.json",
+            "pages": "config/app/locales/en/pages.json"
+        },
+        "de": {
+            "locale": "config/app/locales/de/locales.json",
+            "pages": "config/app/locales/de/pages.json"
+        }
+    },
+    "map": {
+        "zoom": 7,
+        "center": [5.7, 48.7],
+        "rotation": 0,
+        "snapPriority": 5,
+        "editLayerName": "points"
+    },
+    "editLayers": {
+        "points": {
+            "index": 2,
+            "name": "points",
+            "title": "points",
+            "url": "https://www.geograndest.fr/geoserver/test-public/wfs",
+            "md_url": "https://www.geograndest.fr/geonetwork/srv/fre/catalog.search#/metadata/FR-200052264-A0135-0000",
+            "workspace": "test-public",
+            "typeName": "points",
+            "srsName": "EPSG:4326",
+            "type": "Point",
+            "visible": true,
+            "opacity": 1,
+            "fill_color": "#ffffff",
+            "stroke_color": "#ff0000",
+            "stroke_width": 1.25,
+            "radius": 5,
+            "label": {
+                "field": "nom",
+                "visible": true,
+                "font": "14px monospace",
+                "placement": "point",
+                "offsetX": 10,
+                "offsetY": false,
+                "rotation": false,
+                "textAlign": "left",
+                "textBaseline": "middle",
+                "scale": 1,
+                "fill_color": "#000000",
+                "stroke_color": "#ffffff",
+                "stroke_width": 3
+            },
+            "form": {
+                "maj": {
+                    "id": "maj",
+                    "name": "MAJ",
+                    "property": "maj",
+                    "description": "Date de mise à jour",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "1970-01-01",
+                    "value": "",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}]
+                },
+                "nom": {
+                    "id": "name",
+                    "name": "NOM",
+                    "property": "nom",
+                    "description": "Nom de l'établissement",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}]
+                },
+                "descriptio": {
+                    "id": "descriptio",
+                    "name": "DESCRIPTION",
+                    "property": "descriptio",
+                    "description": "Description de l'établissement",
+                    "active": true,
+                    "editable": false,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "textarea",
+                    "input": "",
+                    "options": [{}]
+                },
+                "url_image": {
+                    "id": "url_image",
+                    "name": "IMAGE",
+                    "property": "url_image",
+                    "description": "Image de l'établissement (URL)",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "",
+                    "type": "image",
+                    "input": "text",
+                    "options": [{}]
+                },
+                "site_1": {
+                    "id": "site_1",
+                    "name": "SITE 1",
+                    "property": "site_1",
+                    "description": "URL du site 1",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "",
+                    "type": "input",
+                    "input": "url",
+                    "options": [{}]
+                },
+                "handisport": {
+                    "id": "handisport",
+                    "name": "HANDISPORT",
+                    "property": "handisport",
+                    "description": "Equipement handisport (oui/non)",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "",
+                    "type": "radio",
+                    "input": "text",
+                    "options": [{
+                            "text": "Oui",
+                            "value": "oui"
+                        },
+                        {
+                            "text": "Non",
+                            "value": "non"
+                        }
+                    ]
+                },
+                "discipline": {
+                    "id": "discipline",
+                    "property": "discipline",
+                    "name": "DISCIPLINE",
+                    "description": "Discipline concernée",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "select",
+                    "input": "text",
+                    "options": [{
+                            "text": "Athlétisme",
+                            "value": "Athlétisme"
+                        },
+                        {
+                            "text": "Aviron",
+                            "value": "Aviron"
+                        },
+                        {
+                            "text": "Badminton",
+                            "value": "Badminton"
+                        },
+                        {
+                            "text": "Cyclisme",
+                            "value": "Cyclisme"
+                        }
+                    ]
+                }
+            }
+        },
+        "multipoints": {
+            "index": 2,
+            "name": "multipoints",
+            "title": "multipoints",
+            "url": "https://www.geograndest.fr/geoserver/test-public/wfs",
+            "md_url": "https://www.geograndest.fr/geonetwork/srv/fre/catalog.search#/metadata/FR-200052264-A0135-0000",
+            "workspace": "test-public",
+            "typeName": "multipoints",
+            "srsName": "EPSG:4326",
+            "type": "MultiPoint",
+            "visible": true,
+            "opacity": 1,
+            "fill_color": "#ffffff",
+            "stroke_color": "#ff0000",
+            "stroke_width": 1.25,
+            "radius": 5,
+            "form": {
+                "id": {
+                    "id": "id",
+                    "name": "ID",
+                    "property": "ID",
+                    "description": "Identifiant",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "0",
+                    "value": "0",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                },
+                "nom": {
+                    "id": "name",
+                    "name": "NOM",
+                    "property": "NOM",
+                    "description": "Nom",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                }
+            }
+        },
+        "lines": {
+            "index": 2,
+            "name": "lines",
+            "title": "lines",
+            "url": "https://www.geograndest.fr/geoserver/test-public/wfs",
+            "md_url": "https://www.geograndest.fr/geonetwork/srv/fre/catalog.search#/metadata/FR-200052264-A0135-0000",
+            "workspace": "test-public",
+            "typeName": "lines",
+            "srsName": "EPSG:4326",
+            "type": "LineString",
+            "visible": true,
+            "opacity": 1,
+            "fill_color": "#ffffff",
+            "stroke_color": "#ff0000",
+            "stroke_width": 1.25,
+            "radius": 5,
+            "form": {
+                "id": {
+                    "id": "id",
+                    "name": "ID",
+                    "property": "ID",
+                    "description": "Identifiant",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "0",
+                    "value": "0",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                },
+                "nom": {
+                    "id": "name",
+                    "name": "NOM",
+                    "property": "NOM",
+                    "description": "Nom",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                }
+            }
+        },
+        "multilines": {
+            "index": 2,
+            "name": "multilines",
+            "title": "multilines",
+            "url": "https://www.geograndest.fr/geoserver/test-public/wfs",
+            "md_url": "https://www.geograndest.fr/geonetwork/srv/fre/catalog.search#/metadata/FR-200052264-A0135-0000",
+            "workspace": "test-public",
+            "typeName": "multilines",
+            "srsName": "EPSG:4326",
+            "type": "MultiLineString",
+            "visible": true,
+            "opacity": 1,
+            "fill_color": "#ffffff",
+            "stroke_color": "#ff0000",
+            "stroke_width": 1.25,
+            "radius": 5,
+            "form": {
+                "id": {
+                    "id": "id",
+                    "name": "ID",
+                    "property": "ID",
+                    "description": "Identifiant",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "0",
+                    "value": "0",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                },
+                "nom": {
+                    "id": "name",
+                    "name": "NOM",
+                    "property": "NOM",
+                    "description": "Nom",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                }
+            }
+        },
+        "polygons": {
+            "index": 2,
+            "name": "polygons",
+            "title": "polygons",
+            "url": "https://www.geograndest.fr/geoserver/test-public/wfs",
+            "md_url": "https://www.geograndest.fr/geonetwork/srv/fre/catalog.search#/metadata/FR-200052264-A0135-0000",
+            "workspace": "test-public",
+            "typeName": "polygons",
+            "srsName": "EPSG:4326",
+            "type": "Polygon",
+            "visible": true,
+            "opacity": 1,
+            "fill_color": "#ffffff",
+            "stroke_color": "#ff0000",
+            "stroke_width": 1.25,
+            "radius": 5,
+            "form": {
+                "id": {
+                    "id": "id",
+                    "name": "ID",
+                    "property": "ID",
+                    "description": "Identifiant",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "0",
+                    "value": "0",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                },
+                "nom": {
+                    "id": "name",
+                    "name": "NOM",
+                    "property": "NOM",
+                    "description": "Nom",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                }
+            }
+        },
+        "multipolygons": {
+            "index": 2,
+            "name": "multipolygons",
+            "title": "multipolygons",
+            "url": "https://www.geograndest.fr/geoserver/test-public/wfs",
+            "md_url": "https://www.geograndest.fr/geonetwork/srv/fre/catalog.search#/metadata/FR-200052264-A0135-0000",
+            "workspace": "test-public",
+            "typeName": "multipolygons",
+            "srsName": "EPSG:4326",
+            "type": "MultiPolygon",
+            "visible": true,
+            "opacity": 1,
+            "fill_color": "#ffffff",
+            "stroke_color": "#ff0000",
+            "stroke_width": 1.25,
+            "radius": 5,
+            "form": {
+                "id": {
+                    "id": "id",
+                    "name": "ID",
+                    "property": "ID",
+                    "description": "Identifiant",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "0",
+                    "value": "0",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                },
+                "nom": {
+                    "id": "name",
+                    "name": "NOM",
+                    "property": "NOM",
+                    "description": "Nom",
+                    "active": true,
+                    "editable": true,
+                    "placeholder": "not defined",
+                    "value": "Not defined",
+                    "type": "input",
+                    "input": "text",
+                    "options": [{}],
+                    "datalist": []
+                }
+            }
+        }
+    },
+    "baseLayers": {
+        "osm": {
+            "index": 0,
+            "type": "osm",
+            "name": "osm",
+            "title": "OpenStreetMap",
+            "visible": true,
+            "opacity": 1
+        },
+        "limites": {
+            "index": 1,
+            "type": "wms",
+            "name": "limites-ge",
+            "title": "Limites Grand Est",
+            "visible": true,
+            "opacity": 1,
+            "url": "https://www.geograndest.fr/geoserver/geograndest/wms",
+            "md_url": "",
+            "layers": "GGE_LIMITES_GRANDEST_FRONTIERES"
+        }
+    },
+    "locationLayer": {
+        "index": 3,
+        "name": "location",
+        "fields": ["nom_com"],
+        "title": "Communes du Grand Est",
+        "url": "https://www.geograndest.fr/geoserver/region-grand-est/wfs",
+        "md_url": "",
+        "typeName": "commune_actuelle",
+        "visible": true,
+        "opacity": 1,
+        "fill_color": "#ffffff00",
+        "stroke_color": "#ff0000",
+        "stroke_width": 1.25
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "app": {},
+    "map": {
+        "edit": "Editer",
+        "move": "Déplacer",
+        "create": "Créer",
+        "delete": "Supprimer",
+        "form": "Formulaire",
+        "information": "Information",
+        "refine_location": "Merci de préciser votre recherche et saisir au moins 3 caractères.",
+        "no_feature_found": "Merci de préciser votre recherche. Aucune réponse trouvée.",
+        "save_change": "Sauvegarder",
+        "valid_save_change": "Vouler-vous enregistrer les changements ?",
+        "valid_save_new": "Voulez-vous enregistrer les nouvelles entités saisies ?",
+        "valid_delete": "Voulez-vous supprimer les entités sélectionnées ?",
+        "yes": "Oui",
+        "no": "NON",
+        "form_no_feature": "Aucune information à afficher.<br />Mercie de sélectionner un objet.",
+        "coordinate": "coordonnée",
+        "close": "Fermer"
+    },
+    "settings": {
+        "settings": "Configuration",
+        "about": "Mentions légales",
+        "language": "Langue",
+        "baselayers": "Couches de fonds",
+        "editlayers": "Couches éditables",
+        "snappriority": "Priorité d'accrochage",
+        "locationlayer": "Couche de localisation",
+        "goback": "Retour",
+        "save": "Enregistrer",
+        "stroke_color": "Couleur du trait",
+        "stroke_width": "Epaisseur du trait",
+        "fill_color": "Couleur de remplissage",
+        "radius": "Rayon",
+        "field": "Attribut",
+        "login": "Identifiant",
+        "password": "Mot de passe",
+        "visible": "Visible"
+    },
+    "langs": [{
+            "value": "fr",
+            "text": "Français"
+        },
+        {
+            "value": "en",
+            "text": "Anglais"
+        }
+    ],
+    "searchTypes": [{
+            "title": "Couche d'édition",
+            "description": "",
+            "icon": "search",
+            "name": "editlayer"
+        },
+        {
+            "title": "Couche de localisation",
+            "description": "",
+            "icon": "search-location",
+            "name": "location"
+        }
+    ]
+}
