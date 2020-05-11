@@ -1,6 +1,6 @@
 # Map Me !
 
-Application responsive permettant l'édition/mise à jour de couches WFS-T.
+Application responsive permettant l'édition/mise à jour de données géographiques via WFS-T 2.0.0.
 
 ## Fonctionnalités
 
@@ -41,7 +41,7 @@ Limites connues:
 
 ## Prérequis
 
-Les couches éditables doivent être disponibles via un flux WFS-T 2.0.0.
+Les données géographiques éditables doivent être disponibles via un flux WFS-T 2.0.0.
 
 ## Guide utilisateur
 
