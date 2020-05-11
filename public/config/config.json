@@ -427,7 +427,7 @@
             "type": "osm",
             "name": "osm",
             "title": "OpenStreetMap",
-            "visible": true,
+            "visible": false,
             "opacity": 1
         },
         "wmts": {
