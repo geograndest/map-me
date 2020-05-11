@@ -430,8 +430,22 @@
             "visible": true,
             "opacity": 1
         },
+        "wmts": {
+            "index": 2,
+            "type": "wmts",
+            "name": "wmts",
+            "title": "WMTS layer",
+            "visible": true,
+            "opacity": 1,
+            "url": "https://osm.geograndest.fr/mapcache/wmts",
+            "md_url": "",
+            "layerName": "default",
+            "matrixSet": "GoogleMapsCompatible",
+            "format": "image/png; mode=8bit",
+            "styleName": "default"
+        },
         "limites": {
-            "index": 1,
+            "index": 3,
             "type": "wms",
             "name": "limites-ge",
             "title": "Limites Grand Est",
