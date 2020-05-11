@@ -32,6 +32,7 @@ Application responsive permettant l'édition/mise à jour de données géographi
     -   Mettre à jour les attributs d'une entité
     -   Supprimer une ou plusieurs entités
     -   Prise en charge de l'authentification pour les couches à accès restreint
+- Ajout du multilinguisme
 
 Limites connues:
 
@@ -119,7 +120,7 @@ La page de configuration permet notamment:
 -   De modifier la visibilité et l'opacité des couhes de fonds
 -   De modifier la visibilité, l'opacité et la symbologie de la couche de localisation
 -   De modifier l'affichage, l'opacité, la symbologie et l'étiquette de la couche éditable
--   De modifier la langue de l'application
+-   De modifier la langue de l'application (par défaut définie à partir du navigateur)
 -   D'accéder à la page "A propos"
 
 ## Guide administrateur
@@ -167,7 +168,7 @@ Il s'agit des paramètres de l'application
 #### L'objet "locales"
 
 Il s'agit des paramètres relatifs à la gestion du multilinguisme.
-Le paramètre locales liste des langues disponibles et les liens vers les fichiers de traduction.
+Le paramètre "locales" liste des langues disponibles et les liens vers les fichiers de traduction.
 
 ```json
 "locales": {
