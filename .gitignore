@@ -2,7 +2,6 @@
 node_modules
 /dist
 /tmp
-/docs
 /public/config/private.json
 /public/config/test.json
 

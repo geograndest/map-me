@@ -1,0 +1,480 @@
+# TODO
+
+----
+@done:20200416 #map-me - Créer une couche SHP de test (test1_point)
+
+----
+@done:20200416 #map-me - Publier le SHP de test sur GeoServer, disponible en WFS-T (test-public/test1_point)
+
+----
+@done:20200416 #map-me - Créer un projet "Map-Me" à partir de "Get-Me" et nettoyer le code (conserver uniquement le composant "map")
+
+----
+@done:20200416 #map-me - Afficher couche test1_point en WFS
+
+----
+@done:20200416 #map-me - Ajouter les boutons "edit", "move", "delete", "created" et "form" (ouvre une sidebar pour afficher les attributs)
+
+----
+@done:20200416 #map-me - Configurer Map-Me pour pouvoir: 
+    - Sélectionner un point
+    - Déplacer un point sur la carte 
+    - Supprimer un point de la carte
+
+----
+@done:20200417 #map-me - Ajouter le composant Data-Form pour peupler la sidebar avec les infos du feature sélectionné
+
+----
+@done:20200417 #map-me - Adapter data-form pour générer automatiquement le fomulaire à partir des éléments de configuration: @feature
+- Créer un objet "config.editForm"
+- Décrire chaque champ dans editForm avec les propriétés: "id", "name", "property", "description", "placeholder", "value", "type", "input", "options", "datalist"
+- L'affichage de data-form en mode édition ou non est géré par une variable "edit"
+
+----
+@done:20200417 #map-me - Afficher les coordonner du feature dans la data-form
+
+----
+@done:20200417 #map-me - Rendre les coordonner du point sélectionné modifiables dans data-form @feature
+
+----
+@done:20200418 #map-me - Définir le use case pour la création d'un point: 
+    - Cliquer sur btEdit 
+    - Cliquer sur btCreate 
+    - Ajouter des points sur la carte 
+    - Cliquer sur btCreate 
+    - Valider la création des points dans la fenêtre modale de validation
+
+----
+@done:20200418 #map-me - Définir le use case pour la création d'un point avec modification des attributs 
+    - Cliquer sur btEdit 
+    - Cliquer sur btCreate 
+    - Ajouter des points sur la carte 
+    - Cliquer sur btDataForm 
+    - Modifier le formulaire 
+    - Soumettre le formulaire
+
+----
+@done:20200418 #map-me - Définir le use case pour la suppression d'un point 
+    - Cliquer sur btEdit 
+    - [Optionnel: cliquer sur btDelete] 
+    - Sélectionner sur la carte les points à supprimer 
+    - Cliquer sur btDelete 
+    - Valider la suppression des points dans la fenêtre modale de validation
+
+----
+@done:20200418 #map-me - Définir le use case pour le déplacement d'un point 
+    - Cliquer sur btEdit 
+    - Cliquer sur btMove 
+    - Déplacer des points sur la carte 
+    - Cliquer sur btMove 
+    - Valider le déplacement des points dans la fenêtre modale de validation
+
+----
+@done:20200418 #map-me - Définir le use case pour la mise à jour d'un point (attributs) 
+    - Cliquer sur btEdit 
+    - Sélectionner sur la carte les points à modifier 
+    - Cliquer sur btCreate 
+    - Soumettre le formulaire
+
+----
+@done:20200418 #map-me - Ajouter une fenêtre modale générique de validation
+
+----
+@done:20200418 #map-me - Implémenter le use case pour la création d'un point @feature
+
+----
+@done:20200418 #map-me - Implémenter le use case pour la création d'un point avec modification des attributs @feature
+
+----
+@done:20200418 #map-me - Implémenter le use case pour la suppression d'un point @feature
+
+----
+@done:20200418 #map-me - Implémenter le use case pour le déplacement d'un point @feature
+
+----
+@done:20200418 #map-me - Implémenter le use case pour la mise à jour d'un point (attributs) @feature
+
+----
+@done:20200418 #map-me - Implémenter la function pour la génération du XML Insert pour la transaction WFST dans GeoServer (cf. api/wfst.js)
+
+----
+@done:20200418 #map-me - Implémenter la function pour la génération du XML Delete pour la transaction WFST dans GeoServer (cf. api/wfst.js)
+
+----
+@done:20200418 #map-me - Implémenter la function pour la génération du XML Replace pour la transaction WFST dans GeoServer (cf. api/wfst.js)
+
+----
+@done:20200418 #map-me - Implémenter la function pour l'envoi de la transaction WFST à GeoServer (cf. api/wfst.js)
+
+----
+@done:20200419 #map-me - Ajouter un bouton de géolocalisation dans le header @feature
+
+----
+@done:20200419 #map-me - Réorganiser le fichier config.js: 
+    - Séparer les couches editable et les couches de fonds entre config.editLayers et config.baseLayers
+
+----
+@done:20200419 #map-me - Ajouter les coordonnées du curseur dans le header @feature
+
+----
+@done:20200419 #map-me - Ajouter des boutons "next" et "previous" dans data-form lors de sélections multiples @feature
+
+----
+@done:20200419 #map-me - Ajouter les contrôles au chargement de la carte
+
+----
+@done:20200419 #map-me - Ajouter le nombre de feature dans data-form (style "1/3") @feature
+
+----
+@done:20200419 #map-me - Ajouter possibilité de modifier les coordonnées du point dans data-form @feature
+
+----
+@done:20200419 #map-me - Ajouter un bouton "refresh" de la carte dans le header
+
+----
+@done:20200420 #map-me - Ajouter propriété 'active' dans config.editForm.field
+
+----
+@done:20200420 #map-me - Dans data-form, permettre l'affichage des champs selon leur type (input avec autocomplétion, select, textarea, image, url, checkbox ou radio) @feature
+
+----
+@done:20200420 #map-me - Ajouter gestion des champs de type 'textarea' dans data-form @feature
+
+----
+@done:20200420 #map-me - Ajouter gestion des champs de type 'select' dans data-form @feature
+
+----
+@done:20200420 #map-me - Ajouter gestion des champs de type 'checkbox' dans data-form @feature
+
+----
+@done:20200420 #map-me - Ajouter gestion des champs de type 'radio' dans data-form @feature
+
+----
+@done:20200420 #map-me - Ajouter gestion de l'autocomplétion des champs de type 'input' dans data-form via l'utilisation de 'datalist' @feature
+
+----
+@done:20200420 #map-me - Gérer les URL et images dans data-form: @feature 
+    - Si input = url => utiliser <a></a> dans la restitution sans input 
+    - Si type = image => utiliser <b-img></b-img> dans la restituion
+
+----
+@done:20200420 #map-me - Ajouter les propriétés de chargement initial de la carte (zoom, rotation et center) dans le fichier de config (propriété config.map))
+
+----
+@done:20200420 #map-me - Enregistrer l'ensemble des features sélectionnés lors de la soumission du formulaire
+
+----
+@done:20200421 #map-me - Etudier possibilité d'optimiser la création/modification/déplacement/suppression d'entités que la validation se fasse via la fenêtre modale ou data-form: - MovedFetures => SelectedFeatures + action=move => saveFeatures - SelectedFetures => SelectedFeatures + action=delete => saveFeatures - CreatedFetures => SelectedFeatures + action=create => saveFeatures - SelectedFetures => SelectedFeatures + action=update => saveFeatures
+
+----
+@done:20200421 #map-me - Convertir les coordonnées dans le système de proction de la couche au moment de l'ajout à selectdFeatures: 
+- supprimer la conversion au moment de la génération du XML dans wfst.js 
+- utiliser fonction proj4() dans map.getGeoJsonFromFeature() en ajoutant un paramètre "srsName"
+
+----
+@done:20200421 #map-me - Ajouter la gestion des "locales" dans le fichier de config (adapter store dans vuex et initialisation au chargement de l'application) @feature
+
+----
+@done:20200421 remplacer this.editLayers[this.editLayerName] et this.editLayers['edit'] par une variable computed this.editLayer
+
+----
+@done:20200421 #map-me - Permettre d'indiquer le fichier de config à charger comme paramètre d'URL @feature
+
+----
+@done:20200420 #map-me - Ajouter Vuex pour gérer les infos de la carte et communiquer entre les composants (ex.: center, zoom, etc.)
+
+----
+@done:20200421 #map-me - Reprendre l'ajout des contrôles à la carte pour éviter l'utilisation de ol dans les composants vue 
+    - Ajout de libs/openlayers.js avec approche objet (controls, coordinates, etc.) 
+    - A utiliser et compléter au besoin
+
+----
+@done:20200421 #map-me - Intégrer resistance.js dans helpers.js et réorganiser les différentes librairies en supprimant le dossier "api" pour tout regrouper dans "libs"
+
+----
+@done:20200421 #map-me - Créer un shapefile d'exmple avec les différents types d'attributs et le publier sur Geoserver (cf. test1-public/jo2024_point)
+
+----
+@done:20200421 #map-me - Renommer Resistance.vue en MapMe.vue
+
+----
+@done:20200421 #map-me - Améliorer la gestion du textarea dans data-form
+
+----
+@done:20200421 #map-me - Placer config.editForm dans config.editLayers['edit'].form et adapter le code
+
+----
+@done:20200421 #map-me - Ajouter sur les boutons d'action (move/create/delete/form) le nombre d'éléments sélectionnés @feature
+
+----
+@done:20200421 #map-me - Nettoyer le code après avoir fait une sauvegarde du projet
+
+----
+@done:20200421 #map-me - Problème sur validation lors de changement direct de bouton action (ex.: move => create)
+=> Améliorer la gestion des boutons et de leur activation
+
+----
+@done:20200421 #map-me - Améliorer de l'intégration du control "mousePosition" sur la carte sous forme de badge
+
+----
+@done:20200423 #map-me - Remplacer le bouton d'aide par une page (composant) "settings" avec lien vers l'aide et vers la gestion des couches éditables et de fonds
+
+----
+@done:20200423 #map-me - Ajouter une capacité de recherche "full text" sur la couche d'édition @feature
+    @done:20200423 - mettre en place la barre de recherche sur le modèle de shogun:ui
+    @done:20200423 - Concaténer les champs à partir de config.editForm
+    @done:20200423 - Définir lesparamètres d'URL en ajoutant: &cql_filter=concatenate(field1,field2...) LIKE '%25search%25'
+    @done:20200423 - Récupérer les features et mettre à jour
+    @done:20200424 - Résoudre les messages d'erreur et nettoyer le code
+
+----
+@done:20200424 #map-me - Ajouter la possibilité de pouvoir modifier les couches de fond (affichage/transparence) (cf. page "settings") @feature
+
+----
+@done:20200424 #map-me - Ajouter la possibilité de pouvoir modifier les détails de la couche éditable (fill color, stroke color, radius, etc.) (cf. page "settings") @feature
+
+----
+@done:20200424 #map-me - Ajouter la possibilité d'authentification via la page de settings @feature
+=> Autre possibilité: authentification en appelant le cas et en précisant la redirection dans l'URL comme pour mdEdit 2 (nécessite d'être sur geograndest.fr).
+
+----
+@done:20200425 #map-me - Reprendre la structure de l'application sous forme plus modulaire (header/footer/map, etc.) @impovement
+    @done:20200425 - map
+        @done:20200423 - map-search
+        @done:20200425 - map-form
+        @done:20200425 - map-header
+        @done:20200425 - map-footer
+        @aborted: - map-modal-validation
+    @done:20200425 - settings
+        @done:20200425 - settings-header [DONE]
+        @done:20200425 - settings-footer [DONE]
+        @done:20200424 - settings-base-layer
+        @done:20200424 - settings-edit-layer
+        @done:20200424 - Settings-about
+
+----
+@done:20200425 #map-me - Nettoyer le code et stabiliser la version actuelle 
+    - Enlever les commentaires et console.log inutiles 
+    - Rechercher les variables et fonctions inutiles (notamment suite à la restructuration de l'application et l'utilisation de composants)
+
+----
+@done:20200425 #map-me - Lors qu'une recherche est réalisée, le bouton "getExtentEdit" zoom sur le résultat de la recherche 
+
+----
+@done:20200425 #map-me - Ajouter la possibilité de consulter les métadonnées des couches utilisées (paramétrer dans config) @feature 
+    - Configuration de l'URL dans config.js = le plus simple => Mis en oeuvre 
+    - Utilisation d'un getCapabilities sur WFS par évident (lien de métadonnées non psécifique selon le format) 
+    - Utilisation d'un getCapabilities sur WMS suppose que le flux WMS existe
+
+----
+@done:20200425 #map-me - Rendre les "baseLayers" plus configurable (pouvoir en ajouter/supprimer via config.js) @feature
+    => Indiquer pour chaque couche le type (wms, osm, wmts) et gérer le type via un 'v-if' dans la carte (composant vl-layer-tile)
+    @v1.1.0
+
+----
+@done:20200425 #map-me - Ajouter possibilité de changer de couche editable via l'interface (cf. page "settings" + adapter "config.js")
+    => nécessité de définir une couche éditable par defaut dans le fichier de config
+    @v1.1.0 @feature
+
+----
+@done:20200426 #map-me - Ajouter la possibilité d'éditer des lignes et polygones @v2 @feature
+
+----
+@done:20200426 #map-me - Encoder les paramètres avant de les sauver dans le XML de transaction (erreur si un champ contient du HTML)
+    - Solution 1: encoder les caractères spéciaux
+    - Solution 2: utiliser CDATA
+    => A tester et valider selon usage. Dans un premier temps, c'est la solution 1 qui est utilisée.
+    
+----
+@done:20200427 #map-me - Supprimer 'config.api.wfs_url' (non utilisé)
+
+----
+@done:20200427 #map-me - Mettre les paramètres WFS 'config.api.wfs_params' directement dans le store (fichier de config par défaut) + renommer en config.wfs.params
+
+----
+@done:20200427 #map-me - Ajouter un paramètre field.editable pour chaque champs dans le fichier de config pour rendre les champs activales ou non. @feature
+
+----
+@done:20200427 #map-me - Ajouter la capacité de selectionner des features via une box (utilisation de la touche 'Ctrl') @feature
+    - cf. https://openlayers.org/en/latest/examples/box-selection.html?q=select
+    - cf. https://jsfiddle.net/ghettovoice/v2s9drx4/
+
+----
+@done:20200427 #map-me - Centrer sur la couche à éditer à l'ouverture de l'application @feature
+    - cf. https://github.com/ghettovoice/vuelayers/issues/155
+    - cf. https://jsfiddle.net/ghettovoice/v2s9drx4/
+
+----
+@done:20200427 #map-me - Etudier la possibilité avec le bouton "getExtentEdit" de zoomer sur les objets sélectionnés quand c'est le cas @feature
+
+----
+@done:20200427 #map-me - Lors du zoom sur un point sélectionné, limiter le zoom à un niveau 10
+
+----
+@done::20200428 #map-me - Rendre la recherche insensible à la casse par défaut (remplacer LIKE par ILIKE)
+
+-----
+@done:20200502 #map-me - Erreur lors de la génération du XML au moment des transaction WFST: le nom du champ geométrie n'est pas bien renseignéalisée
+    - Lié à priori à l'utilisation du format GeoJson pour la communication entre openlayers et vuelayers => la prioriété geometryName n'existe pas en GeoJson
+    => Besoin d'appeler une requête DescribeFeatureType et analyser les champs disponibles pour identifier le champs de géométrie (nom débute pas "gml:")
+    @bug
+
+-----
+@done:20200502 #map-me - Ajouter la propriété config.map.snap-priorité dans config.js
+
+-----
+@done:20200502 #map-me - Déplacer config.editLayerName vers config.map.editLayerName dans config.js
+
+-----
+@done:20200502 #map-me - Ajoutr la possibilité de modifier la priorité de snap dans la vue settings.
+    => Se baser sur le champs opacity pour la mise en forme
+    => Fait mais non activé car un snap à 0 ne le désactive pas pour les déplacements (move)...
+
+----
+@aborted: #map-me - Etudier la possibilité d'ajouter un overlay au passage de la souris sur les features de la couche editable @feature
+    - cf. https://jsfiddle.net/ghettovoice/r4ejqk93/37/
+    - Ajouter une propriété aux champs du type 'form.field.overlay' afin de ne pas ajouter tous les champs de la couche à l'overlay
+    => cf. ajout d'un label sur les poitsn de la couche éditable
+
+----
+@done:20200504 #map-me - Vérifier édition des points
+----
+@done:20200504 #map-me - Vérifier édition des lignes
+----
+@done:20200504 #map-me - Vérifier édition des polygones
+
+----
+@done:20200504 #map-me - Vérifier la création, la modification ou la suppression de plusieurs éléments : points, lignes et polygones
+
+----
+@done:20200504 #map-me - Ne pas afficher fill_color pour type = LineString || MultiLineString
+
+----
+@done:20200506 #map-me - Ajouter un label coonfigurable sur les features de la couche éditable @feature
+    - Ajout d'un objet de configuration editLayer.label dans le config.json
+    - Remplacement des composant vl-style-box dans la carte par une fonction de mise en forme du style en s'appuyant sur les fonctions openlayers natives
+
+----
+@done:20200507 #map-me - Rendre le label des couches éditables paramettrales dans la page settings @feature
+    - label.visible
+    - label.fill_color
+    - label.stroke_color
+    - label.stroke_width
+
+----
+@done:20200507 #map-me - Definir une structure de l'objet "layer" par defaut dans le store pour le charger dans settings au cas où certaines propriétés ne sotn pas définies
+
+----
+@done:20200507 #map-me - Ajouter la gestion du multilinguisme avec l'utilisation des fichiers de "locales" @feature
+
+----
+@done:20200507 #map-me - Ajouter l'utiisation de page makdown/html multilingues (ex.: modal-about dans SettingsAbout.vue)
+
+----
+@done:20200508 #map-me - Etudier l'utilisation d'un paramètre d'url pour désigner la couche en cours d'édition 
+    - path: "map/:edit-layer 
+    - path: "settings/:edit-layer
+    => par défaut, utiliser la couche définie comme tel dans config.json ou la première couche de la liste
+
+----
+@done:20200508 #map-me - Ajouter la possibilité de faire des recherche complexes sur un champ particulier avec opérateur contient et égal
+    - Utilisation de ":" pour contient:
+        - Une recherche sur "strasbourg" ou ":strasbourg" execute une requête de type "concatenate(field1,field2,field3,...) ILIKE '%strasbourg%'"
+        - Une recherche sur "nom:strasbourg" execute une requête de type "concatenate(nom) ILIKE '%strasbourg%'"
+    - Utilisation de "=" pour égual:
+        - Une recherche sur "=strasbourg" execute une requête de type "concatenate(field1,field2,field3,...) ILIKE 'strasbourg'" (pas de sens sans préciser le champ de recherche). Dans ce cas, il est possible d'utiliser le wilcar '%' dans la recherche. Par exemple "=reims%" pour rechercher tous les éléments qui commencent par "reims".
+        - Une recherche sur "nom=strasbourg" execute une requête de type "concatenate(nom) ILIKE 'strasbourg'" (équivalent à nom=strasbourg, mais sans tenir compte de la casse)
+
+----
+@done:20200504 #map-me - Ajouter la possibilité de se localiser en fonction d'une couche spécifique "locationLayer"
+    - Ajout d'une nouvelle couche dans le fichier de config
+    - Ajouter une liste déroulante dans la recherche pour préciser si on rechercher sur editLayer ou locationLayer
+    - Zoomer automatiquement sur l'emprise lors d'une recherche sur editLayer ou locationLayer
+
+----
+@done:20200505 #map-me - Changer d'icon de la barre de recherche selon si on est sur la couche edit ou location
+
+----
+@done:20200505 #map-me - Ajouter spinner lors du chargement, l'édition (transaction) ou de la recherche des features (sur edit ou location)
+
+----
+@done:20200505 #map-me - Créer une méthode "zoomOnExtent(extent)" réutilisable
+
+----
+@done:20200505 #map-me - Etudier l'utilisation des wildcar "%" dans la barre de recherche
+    - Fonctionnement pas tout à fait identique entre edit (un seul champ de recherche) et location (concaténation de champs): rend l'usage du "%" assez complexe s'il n'est pas imposé
+    - Par contre localisation imprécise quand on fait certaines recherche: impossible de se localiser spécifiquement sur "reims" par exemple
+
+----
+@done:20200508 #map-me - Désactiver la recherche sur locationLayer si n'existe pas dans le fichier de config
+    - si absent de config.json ou `"name" = false`, désactivation complète
+    - `"visible": false` désactivation momentanée
+
+----
+@done:20200502 #map-me:studio - Mise en place du composant studio 
+    - Mise en place de Studio.vue, StudioHeader.vue, StudioFooter.vue sur le modèle de Settings
+    - Ajout des champs: title, zoom, rotation et center
+    @feature
+
+
+----
+@done:20200508 #map-me - Nettoyer le code de l'application et basculer les fonctions gloables, réutilisables et contenant des fonctions ol dans les librairies
+    - Ex.: getSelectedFeatures()
+    - Ex.: getExtent()
+
+----
+@done:20200508 #map-me - Dans les baseLayers ajouter la possibilité d'ajouter des couches WMTS
+
+----
+@done:20200508 #map-me - Tester l'ajout de WMTS comme baseLayer (cf. WMTS sur osm.geograndest.fr)
+
+----
+@done:20200509 #map-me - Réorganiser l'application:
+    - Supprimer MapMe.vue
+    - Placer Map.vue, Settings.vue et Studio.vue dans views
+    - Adapter router/index.js
+
+----
+@waiting: #map-me - Ajouter map.js pour les fonctions spatiales non liées à wfst ou natives openlayers
+
+----
+@todo: #map-me - Ajouter la gestion des entités multiples (multipoint, multiline, multipolygon)
+    - Si ajout de plusieurs entités sur une couche multi => générer une entité multi et non plusieurs entités simples 
+    @v2
+
+----
+@todo: #map-me - Ajouter la possibilité de créer un point par saisie directe dans data-form @feature
+    - Nécessite la possibilité d'avoir accès au formulaire vide
+    @v2
+
+----
+@todo: #map-me - Etudier la possibilité de consulter les métadonnées des couches utilisées (paramétrer dans config) @impovement @feature
+    => si valeur dans md_url = 'wms' => récupérer le lien (format text/html) dans un getCapabilities du WMS
+    => si valeur dans md_url = 'wfs' => récupérer le lien (premier lien) dans un getCapabilities du WFS
+    => sinon utilisé l'URL fournie
+    @v2
+
+----
+@waiting: #map-me - Etudier utilisation de vuex pour gérer le state du composant map-footer (utilisé par map-form et map)
+
+----
+@todo: #map-me - Ajouter un bouton dans le formulaire de recherche pour activer/désactiver la sensibilité à la casse (LIKE <=> ILIKE)
+    @v2
+
+----
+@waiting: #map-me - Etudier la possibilité de gérer plusieurs couches de localisation
+
+----
+@todo: #map-me:studio - Ajouter la fonction de génération du fichier json + téléchargement (utiliser librairie nodejs: cf. mdEdit2) 
+    @v2
+----
+@todo: #map-me:studio - Ajouter composant studio-base-layers
+    @v2
+----
+@todo: #map-me:studio - Ajouter composant studio-edit-layers
+     @v2
+----
+@todo: #map-me:studio - Ajouter composant studio-edit-layer-fields
+     @v2
+
+----
