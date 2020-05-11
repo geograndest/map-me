@@ -1,0 +1,63 @@
+{
+    "app": {},
+    "map": {
+        "edit": "Edit",
+        "move": "Move",
+        "create": "Create",
+        "delete": "Delete",
+        "form": "Form",
+        "information": "Information",
+        "refine_location": "The position search must contain more than 2 characters. Please refine your search.",
+        "no_feature_found": "No feature found. Please refine your search.",
+        "save_change": "Save change",
+        "valid_save_change": "Do you want to save change ?",
+        "valid_save_new": "Do you want to save new features ?",
+        "valid_delete": "Do you want to delete selected features ?",
+        "yes": "Yes",
+        "no": "No",
+        "form_no_feature": "No feature to display.<br />Select a feature please.",
+        "coordinate": "coordinate",
+        "close": "Close"
+    },
+    "settings": {
+        "settings": "Settings",
+        "about": "About",
+        "language": "Language",
+        "baselayers": "Base layers",
+        "editlayers": "Edit layers",
+        "snappriority": "Snap priority",
+        "locationlayer": "Location layer",
+        "goback": "Go back",
+        "save": "Save",
+        "stroke_color": "Stroke color",
+        "stroke_width": "Stroke width",
+        "fill_color": "Fill color",
+        "radius": "Radius",
+        "field": "Field",
+        "login": "Login",
+        "password": "Password",
+        "visible": "Visible"
+    },
+    "langs": [{
+            "value": "fr",
+            "text": "French"
+        },
+        {
+            "value": "en",
+            "text": "English"
+        }
+    ],
+    "searchTypes": [{
+            "title": "Edit layer",
+            "description": "",
+            "icon": "search",
+            "name": "editlayer"
+        },
+        {
+            "title": "Location",
+            "description": "",
+            "icon": "search-location",
+            "name": "location"
+        }
+    ]
+}

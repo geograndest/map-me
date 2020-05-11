@@ -1,0 +1,72 @@
+{
+    "name": "map-me",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.19",
+        "@fortawesome/free-regular-svg-icons": "^5.13.0",
+        "@fortawesome/free-solid-svg-icons": "^5.9.0",
+        "@fortawesome/vue-fontawesome": "^0.1.5",
+        "bootstrap-vue": "^2.13.1",
+        "chart.js": "^2.9.3",
+        "core-js": "^3.6.5",
+        "dompurify": "^2.0.11",
+        "jquery": "^3.5.1",
+        "marked": "^1.0.0",
+        "proj4": "^2.6.1",
+        "vue": "^2.6.11",
+        "vue-async-computed": "^3.8.2",
+        "vue-chartjs": "^3.5.0",
+        "vue-native-notification": "^1.0.5",
+        "vue-router": "^3.1.5",
+        "vuelayers": "^0.11.23",
+        "vuex": "^3.3.0"
+    },
+    "devDependencies": {
+        "@babel/polyfill": "^7.7.0",
+        "@vue/cli-plugin-babel": "~4.3.0",
+        "@vue/cli-plugin-eslint": "~4.3.0",
+        "@vue/cli-plugin-router": "~4.3.0",
+        "@vue/cli-plugin-vuex": "~4.3.0",
+        "@vue/cli-service": "~4.3.0",
+        "axios": "^0.19.2",
+        "babel-eslint": "^10.0.3",
+        "bootstrap": "^4.3.1",
+        "eslint": "^6.8.0",
+        "eslint-plugin-vue": "^6.1.2",
+        "fibers": "^5.0.0",
+        "mutationobserver-shim": "^0.3.3",
+        "popper.js": "^1.16.0",
+        "portal-vue": "^2.1.6",
+        "sass": "^1.26.5",
+        "sass-loader": "^8.0.2",
+        "vue-cli-plugin-axios": "0.0.4",
+        "vue-cli-plugin-bootstrap-vue": "^0.6.0",
+        "vue-cli-plugin-fontawesome": "^0.2.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
+}
