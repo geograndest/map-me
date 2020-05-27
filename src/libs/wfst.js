@@ -236,7 +236,7 @@ function get_xml_feature(featureType, geometryFieldName, feature, srsName) {
 
     xml_feature.push('</wfs:' + geometryName + '>');
     for (var property in properties) {
-        if (property != geometryName && properties[property]) {
+        if (![geometryName, "geometry"].includes(property) && properties[property]) {
             xml_feature.push('<wfs:' + property + '>' + escapeXml(properties[property]) + '</wfs:' + property + '>');
         }
     }
