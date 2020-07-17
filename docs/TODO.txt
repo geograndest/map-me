@@ -478,3 +478,4 @@
      @v2
 
 ----
+@todo: Documenter le multilinguisme dans README.md
