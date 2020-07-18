@@ -173,7 +173,8 @@ function get_xml_geometry(id, geometryType, coordinates, srsName) {
     var xml_geometry = [];
     if (["Point", "MultiPoint"].includes(geometryType)) {
         xml_geometry.push('<gml:Point srsName="' + srsName + '" gml:id="' + id + '.1">');
-        xml_geometry.push('<gml:pos decimal = "." cs="," ts=" ">' + coordinates + '</gml:pos>');
+        // xml_geometry.push('<gml:pos decimal = "." cs="," ts=" ">' + coordinates + '</gml:pos>');
+        xml_geometry.push('<gml:pos>' + coordinates + '</gml:pos>');
         xml_geometry.push('</gml:Point>');
     }
     if (["LineString", "MultiLineString"].includes(geometryType)) {
