@@ -8,9 +8,18 @@
        http://schemas.opengis.net/wfs/2.0/wfs.xsd
        http://www.opengis.net/gml/3.2
        http://schemas.opengis.net/gml/3.2.1/gml.xsd">
-    <wfs:Delete typeName="CD67_CANTON_ACTUEL_BR_CC48_TEST">
+    <wfs:Replace typeName="points">
+        <points gml:id="points.50">
+            <wfs:geom>
+                <gml:Point srsName="EPSG:4326" gml:id="points.50.1">
+                    <gml:pos decimal = "." cs="," ts=" ">7.866210937500003 48.2</gml:pos>
+                </gml:Point>
+            </wfs:geom>
+            <wfs:fid>50</wfs:fid>
+            <wfs:nom>test</wfs:nom>
+        </points>
         <fes:Filter>
-            <fes:ResourceId rid="CD67_CANTON_ACTUEL_BR_CC48_TEST.24"/>
+            <fes:ResourceId rid="points.50"/>
         </fes:Filter>
-    </wfs:Delete>
+    </wfs:Replace>
 </wfs:Transaction>
