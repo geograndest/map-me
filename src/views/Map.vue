@@ -1,14 +1,7 @@
 <template>
     <div>
-        <div
-            v-if="!config"
-            class="d-flex justify-content-center align-items-center pt-5 mt-5"
-        >
-            <b-spinner
-                variant="dark"
-                type="grow"
-                label="Spinning"
-            ></b-spinner>
+        <div v-if="!config" class="d-flex justify-content-center align-items-center pt-5 mt-5">
+            <b-spinner variant="dark" type="grow" label="Spinning"></b-spinner>
         </div>
 
         <div v-else>
@@ -25,7 +18,6 @@
             <b-container>
                 <b-row>
                     <b-col>
-
                         <vl-map
                             id="map"
                             ref="map"
@@ -38,22 +30,14 @@
                             @created="onMapCreated"
                             @mounted="onMapMounted"
                         >
-
-                            <b-badge
-                                id="mouse-position"
-                                variant="light"
-                                class="p-1 border"
-                            ><span class="font-weight-normal">X/Y: <span ref="mousePosition"></span></span></b-badge>
-                            <b-badge
-                                v-if="loading"
-                                id="loading"
-                                variant="transparent"
-                                class=""
-                            >
-                                <b-spinner
-                                    variant="dark"
-                                    type="grow"
-                                ></b-spinner>
+                            <b-badge id="mouse-position" variant="light" class="p-1 border">
+                                <span class="font-weight-normal">
+                                    X/Y:
+                                    <span ref="mousePosition"></span>
+                                </span>
+                            </b-badge>
+                            <b-badge v-if="loading" id="loading" variant="transparent" class>
+                                <b-spinner variant="dark" type="grow"></b-spinner>
                             </b-badge>
 
                             <vl-view
@@ -97,7 +81,7 @@
                                     v-if="baseLayer.type == 'wfs'"
                                     :url="baseLayer.url"
                                     :layers="baseLayer.layers"
-                                ></vl-source-vector> -->
+                                ></vl-source-vector>-->
                             </vl-layer-tile>
 
                             <vl-layer-vector
@@ -131,6 +115,7 @@
                                     ref="vectorSourceEdit"
                                     :visible="editLayer.visible"
                                     :features.sync="features"
+                                    @created="loadFeatures()"
                                 ></vl-source-vector>
                                 <vl-style-func :factory="styleEditLayer"></vl-style-func>
                             </vl-layer-vector>
@@ -141,8 +126,7 @@
                                 v-if="['view', 'update', 'delete'].includes(action)"
                                 :features.sync="selectedFeatures"
                                 @select="onSelect"
-                            >
-                            </vl-interaction-select>
+                            ></vl-interaction-select>
 
                             <vl-interaction-draw
                                 ref="interactionDraw"
@@ -151,8 +135,7 @@
                                 source="vectorSourceEdit"
                                 @drawstart="onDrawStart"
                                 @drawend="onDrawEnd"
-                            >
-                            </vl-interaction-draw>
+                            ></vl-interaction-draw>
                             <vl-interaction-modify
                                 ref="interactionModify"
                                 v-if="action == 'move'"
@@ -167,7 +150,6 @@
                                 :priority="config.map.snapPriority"
                             ></vl-interaction-snap>
                         </vl-map>
-
                     </b-col>
                 </b-row>
             </b-container>
@@ -185,11 +167,7 @@
                 @on-clean-map="cleanMap"
             ></map-footer>
 
-            <b-sidebar
-                id="data-form"
-                :title="editLayer.title"
-                _width="50%"
-            >
+            <b-sidebar id="data-form" :title="editLayer.title" _width="50%">
                 <map-form
                     :data="selectedFeatures"
                     :form="editLayer.form"
@@ -201,24 +179,10 @@
             </b-sidebar>
         </div>
 
-        <b-modal
-            id="modal-info"
-            centered
-            hide-footer
-        >
-            <template
-                v-slot:modal-title
-                v-if="modalInfo.title"
-            >
-                {{modalInfo.title}}
-            </template>
-            <div class="d-block">
-                {{modalInfo.message}}
-            </div>
-            <b-button
-                class="mt-3 float-right w-25"
-                @click="$bvModal.hide('modal-info')"
-            >Ok</b-button>
+        <b-modal id="modal-info" centered hide-footer>
+            <template v-slot:modal-title v-if="modalInfo.title">{{modalInfo.title}}</template>
+            <div class="d-block">{{modalInfo.message}}</div>
+            <b-button class="mt-3 float-right w-25" @click="$bvModal.hide('modal-info')">Ok</b-button>
         </b-modal>
     </div>
 </template>
@@ -240,10 +204,10 @@ export default {
         MapForm,
         MapSearch,
         MapHeader,
-        MapFooter
+        MapFooter,
     },
     props: {
-        layerName: String
+        layerName: String,
     },
     data() {
         return {
@@ -253,7 +217,7 @@ export default {
             searchTypes: [],
             modalInfo: {
                 title: "",
-                message: ""
+                message: "",
             },
             defaultControls: {},
             locationLayer: false,
@@ -274,14 +238,14 @@ export default {
                 edit: false,
                 create: false,
                 move: false,
-                delete: false
-            }
+                delete: false,
+            },
         };
     },
     watch: {},
     asyncComputed: {},
     computed: {
-        mapHeight: function() {
+        mapHeight: function () {
             return window.innerHeight - 120 + "px";
         },
         config() {
@@ -293,20 +257,20 @@ export default {
         locales() {
             return this.$store.getters.locales;
         },
-        editLayer: function() {
+        editLayer: function () {
             if (this.editLayers && this.editLayerName) {
                 return this.editLayers[this.editLayerName];
             }
             return false;
-        }
+        },
     },
     filters: {},
     methods: {
-        test: function() {
+        test: function () {
             console.log("test");
         },
-        onSelect: function(evt) {},
-        onSearch: function(searchValue, searchType) {
+        onSelect: function (evt) {},
+        onSearch: function (searchValue, searchType) {
             if (searchType.name == "editlayer") {
                 this.locationFeatures = [];
                 this.loadFeatures(searchValue);
@@ -317,14 +281,14 @@ export default {
                 } else {
                     this.modalInfo = {
                         title: this.locales.map.information,
-                        message: this.locales.map.refine_location
+                        message: this.locales.map.refine_location,
                     };
                     this.$bvModal.show("modal-info");
                 }
             }
         },
 
-        extentOnLocationFeatures: function(searchValue) {
+        extentOnLocationFeatures: function (searchValue) {
             this.loading = true;
             searchValue = searchValue || "";
             var wfs = JSON.parse(JSON.stringify(this.config.wfs));
@@ -334,7 +298,7 @@ export default {
                 searchValue
             );
             wfst.getFeatures(this.locationLayer.url, wfs.params)
-                .then(response => {
+                .then((response) => {
                     this.$refs.vectorSourceLocation.$source.clear();
                     this.locationFeatures = response.data.features;
                     setTimeout(() => {
@@ -354,14 +318,14 @@ export default {
         onMapCreated(map) {
             // a DragBox interaction used to select features by drawing boxes
             const dragBox = new openlayers.interaction.DragBox({
-                condition: openlayers.condition.platformModifierKeyOnly
+                condition: openlayers.condition.platformModifierKeyOnly,
             });
             map.$map.addInteraction(dragBox);
             dragBox.on("boxend", () => {
                 // features that intersect the box are added to the collection of selected features
                 const extent = dragBox.getGeometry().getExtent();
                 const source = this.$refs.vectorSourceEdit.$source;
-                source.forEachFeatureIntersectingExtent(extent, feature => {
+                source.forEachFeatureIntersectingExtent(extent, (feature) => {
                     feature = vuelayers.olExt.writeGeoJsonFeature(feature);
                     this.selectedFeatures.push(feature);
                 });
@@ -379,8 +343,8 @@ export default {
                     coordinateFormat: openlayers.coordinate.createStringXY(4),
                     projection: "EPSG:4326",
                     className: "d-inline",
-                    undefinedHTML: "&nbsp;"
-                })
+                    undefinedHTML: "&nbsp;",
+                }),
                 // new openlayers.controls.overviewmap({
                 //     collapsed: true,
                 //     collapsible: true
@@ -393,19 +357,19 @@ export default {
 
         // TODO: à mettre dans map.js?
         styleEditLayer() {
-            return feature => {
+            return (feature) => {
                 var fill = new openlayers.style.Fill({
-                    color: this.editLayer.fill_color
+                    color: this.editLayer.fill_color,
                 });
                 var stroke = new openlayers.style.Stroke({
                     color: this.editLayer.stroke_color,
-                    width: this.editLayer.stroke_width
+                    width: this.editLayer.stroke_width,
                 });
 
                 var image = new openlayers.style.Circle({
                     radius: this.editLayer.radius,
                     fill: fill,
-                    stroke: stroke
+                    stroke: stroke,
                 });
 
                 var style = {};
@@ -444,7 +408,7 @@ export default {
                         fill: new openlayers.style.Fill({
                             color:
                                 this.editLayer.label.fill_color ||
-                                this.defaultLayer.label.fill_color
+                                this.defaultLayer.label.fill_color,
                         }),
                         stroke: new openlayers.style.Stroke({
                             color:
@@ -452,8 +416,8 @@ export default {
                                 this.defaultLayer.label.stroke_color,
                             width:
                                 this.editLayer.label.stroke_width ||
-                                this.defaultLayer.label.stroke_width
-                        })
+                                this.defaultLayer.label.stroke_width,
+                        }),
                     });
                 }
                 if (["Point", "MultiPoint"].includes(this.editLayer.type)) {
@@ -468,11 +432,11 @@ export default {
         },
 
         getLocation() {
-            helpers.getLocation(coord => {
+            helpers.getLocation((coord) => {
                 this.$refs.mapView.animate({
                     center: coord,
                     zoom: 15,
-                    duration: 2000
+                    duration: 2000,
                 });
                 this.config.map.center = coord;
                 this.config.map.zoom = 15;
@@ -487,27 +451,29 @@ export default {
             this.$router.push({
                 name: "settings",
                 params: { layerName: this.editLayerName },
-                query: this.query
+                query: this.query,
             });
         },
 
         // TODO: à mettre map.js ?
         getSelectedFeatures(features) {
-            var featuresId = features.map(feature => feature.id);
-            return this.$refs.vectorSourceEdit.getFeatures().filter(feature => {
-                return featuresId.includes(feature.getId());
-            });
+            var featuresId = features.map((feature) => feature.id);
+            return this.$refs.vectorSourceEdit
+                .getFeatures()
+                .filter((feature) => {
+                    return featuresId.includes(feature.getId());
+                });
         },
 
         zoomOnExtent(extent) {
             this.$refs.mapView.$view.fit(extent, {
                 size: this.$refs.map.$map.getSize(),
                 duration: 2000,
-                maxZoom: 18
+                maxZoom: 18,
             });
         },
 
-        extendOnEditLayer: function() {
+        extendOnEditLayer: function () {
             var extent = false;
             this.locationFeatures = [];
             if (this.selectedFeatures.length) {
@@ -524,12 +490,12 @@ export default {
 
         // NOT REALLY USED
         // this.editLayerGeometryName and this.editLayerGeometryType are not used in map.vue file
-        loadEditLayerProperties: function() {
+        loadEditLayerProperties: function () {
             this.loading = true;
             wfst.getLayerProperties(
                 this.editLayer.url,
                 this.editLayer.typeName,
-                data => {
+                (data) => {
                     this.editLayerGeometryName = wfst.getLayerGeometryName(
                         data
                     );
@@ -541,7 +507,7 @@ export default {
             );
         },
 
-        loadFeatures: function(searchValue) {
+        loadFeatures: function (searchValue) {
             this.loading = true;
             searchValue = searchValue || "";
             var wfs = JSON.parse(JSON.stringify(this.config.wfs));
@@ -557,7 +523,7 @@ export default {
                 this.editLayer.login,
                 this.editLayer.password
             )
-                .then(response => {
+                .then((response) => {
                     if (response.data.features.length) {
                         this.$refs.vectorSourceEdit.$source.clear();
                         this.features = response.data.features;
@@ -569,7 +535,7 @@ export default {
                         this.loading = false;
                         this.modalInfo = {
                             title: this.locales.map.information,
-                            message: this.locales.map.no_feature_found
+                            message: this.locales.map.no_feature_found,
                         };
                         this.$bvModal.show("modal-info");
                     }
@@ -583,10 +549,10 @@ export default {
         },
 
         // Create features
-        onDrawStart: function(evt) {
+        onDrawStart: function (evt) {
             // console.log(1, evt, evt.feature, this.selectedFeatures);
         },
-        onDrawEnd: function(evt) {
+        onDrawEnd: function (evt) {
             // console.log(2, evt, evt.feature, this.selectedFeatures);
             this.selectedFeatures.push(
                 // TODO: à placer dans map.js?
@@ -597,13 +563,13 @@ export default {
         },
 
         // Move features
-        onModifyStart: function(evt) {
+        onModifyStart: function (evt) {
             this.modifyingFeatures = {};
-            evt.features.forEach(feature => {
+            evt.features.forEach((feature) => {
                 this.modifyingFeatures[feature.getId()] = feature.getRevision();
             });
         },
-        onModifyEnd: function(evt) {
+        onModifyEnd: function (evt) {
             for (var f = 0; f < evt.features.getArray().length; f++) {
                 var feature = evt.features.getArray()[f];
                 if (
@@ -633,7 +599,7 @@ export default {
             }
         },
 
-        saveFeatures: function(action, jsonFeatures) {
+        saveFeatures: function (action, jsonFeatures) {
             this.loading = true;
 
             jsonFeatures = jsonFeatures || this.selectedFeatures;
@@ -675,21 +641,21 @@ export default {
                 this.editLayer.typeName,
                 features,
                 srsName,
-                function(response) {
+                function (response) {
                     this.loading = false;
                     console.log(reponse);
                 }
             );
         },
 
-        clearFeatures: function() {
+        clearFeatures: function () {
             this.selectedFeatures = [];
             this.createdFeatures = [];
             this.modifyingFeatures = {};
             this.modifiedFeaturesId = [];
         },
 
-        cleanMap: function(ms) {
+        cleanMap: function (ms) {
             ms = ms || 1000;
             this.$bvModal.hide("modal-valid-change");
             helpers.sleep(ms).then(() => {
@@ -699,11 +665,11 @@ export default {
             });
         },
 
-        updateAction: function(action) {
+        updateAction: function (action) {
             this.action = action || "view";
         },
 
-        onSaveForm: function(data) {
+        onSaveForm: function (data) {
             this.saveFeatures(this.action, data);
             this.cleanMap();
             this.btActive.create = false;
@@ -711,9 +677,9 @@ export default {
             this.btActive.delte = false;
             this.onCloseForm();
         },
-        onCloseForm: function() {
+        onCloseForm: function () {
             this.$root.$emit("bv::toggle::collapse", "data-form");
-        }
+        },
     },
     created() {
         this.query = this.$route.query;
@@ -731,9 +697,9 @@ export default {
             this.config.map.editLayerName ||
             Object.keys(this.editLayers)[0];
         this.loadEditLayerProperties();
-        this.loadFeatures();
+        // this.loadFeatures();
     },
-    mounted() {}
+    mounted() {},
 };
 </script>
 
