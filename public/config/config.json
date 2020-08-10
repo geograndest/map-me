@@ -431,7 +431,7 @@
             "opacity": 1
         },
         "wmts": {
-            "index": 2,
+            "index": 1,
             "type": "wmts",
             "name": "wmts",
             "title": "WMTS layer",
@@ -457,7 +457,7 @@
         }
     },
     "locationLayer": {
-        "index": 3,
+        "index": 4,
         "name": "location",
         "fields": ["nom_com"],
         "title": "Communes du Grand Est",
