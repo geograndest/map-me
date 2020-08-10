@@ -435,6 +435,13 @@
     - Adapter router/index.js
 
 ----
+@done:20200810 #map-me - Mettre à jour les librairies js
+
+----
+@done:20200810 #map-me - Les features n'apparaissent pas au premier chargement de la page dans FF car this.$href.vectorSourceEdit.$source est undefined au chargement initial.
+    => Ajout du chargement des features à la création de la vue avec la propriété @created="" dans la source correspondante.
+
+----
 @waiting: #map-me - Ajouter map.js pour les fonctions spatiales non liées à wfst ou natives openlayers
 
 ----
