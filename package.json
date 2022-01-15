@@ -18,7 +18,7 @@
         "core-js": "^3.6.5",
         "dompurify": "^2.0.12",
         "jquery": "^3.5.1",
-        "marked": "^1.1.0",
+        "marked": "^4.0.10",
         "proj4": "^2.6.2",
         "vue": "^2.6.11",
         "vue-async-computed": "^3.8.2",
