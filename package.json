@@ -16,7 +16,7 @@
         "bootstrap-vue": "^2.16.0",
         "chart.js": "^2.9.3",
         "core-js": "^3.6.5",
-        "dompurify": "^2.0.12",
+        "dompurify": "^2.0.17",
         "jquery": "^3.5.1",
         "marked": "^1.1.0",
         "proj4": "^2.6.2",
